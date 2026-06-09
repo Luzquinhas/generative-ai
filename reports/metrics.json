@@ -1,0 +1,135 @@
+{
+  "classification": {
+    "target": "categoria_risco",
+    "classes": [
+      "Baixo Risco",
+      "Médio Risco",
+      "Alto Risco"
+    ],
+    "best_model": "LogisticRegression",
+    "models": {
+      "LogisticRegression": {
+        "cv_f1_macro_mean": 0.9299121951849971,
+        "cv_f1_macro_std": 0.01257441295922626,
+        "accuracy": 0.9325,
+        "f1_macro": 0.9357439795706268,
+        "precision_macro": 0.9305905990094384,
+        "recall_macro": 0.9418795354636845,
+        "roc_auc_ovr": 0.9928213133505545
+      },
+      "RandomForest": {
+        "cv_f1_macro_mean": 0.9206976382289358,
+        "cv_f1_macro_std": 0.012893591860139523,
+        "accuracy": 0.9025,
+        "f1_macro": 0.9049540131271655,
+        "precision_macro": 0.913316049390561,
+        "recall_macro": 0.8980991751365616,
+        "roc_auc_ovr": 0.982037677438515
+      },
+      "GradientBoosting": {
+        "cv_f1_macro_mean": 0.9160639394544414,
+        "cv_f1_macro_std": 0.010658379025187629,
+        "accuracy": 0.9175,
+        "f1_macro": 0.9218479762477197,
+        "precision_macro": 0.9251367046972967,
+        "recall_macro": 0.9188361794801233,
+        "roc_auc_ovr": 0.9868819861859244
+      }
+    },
+    "confusion_matrix": [
+      [
+        132,
+        7,
+        0
+      ],
+      [
+        12,
+        165,
+        6
+      ],
+      [
+        0,
+        2,
+        76
+      ]
+    ],
+    "classification_report": {
+      "Baixo Risco": {
+        "precision": 0.9166666666666666,
+        "recall": 0.9496402877697842,
+        "f1-score": 0.9328621908127208,
+        "support": 139.0
+      },
+      "Médio Risco": {
+        "precision": 0.9482758620689655,
+        "recall": 0.9016393442622951,
+        "f1-score": 0.9243697478991597,
+        "support": 183.0
+      },
+      "Alto Risco": {
+        "precision": 0.926829268292683,
+        "recall": 0.9743589743589743,
+        "f1-score": 0.95,
+        "support": 78.0
+      },
+      "accuracy": 0.9325,
+      "macro avg": {
+        "precision": 0.9305905990094384,
+        "recall": 0.9418795354636845,
+        "f1-score": 0.9357439795706268,
+        "support": 400.0
+      },
+      "weighted avg": {
+        "precision": 0.9331095808802915,
+        "recall": 0.9325,
+        "f1-score": 0.932318770971286,
+        "support": 400.0
+      }
+    }
+  },
+  "regression": {
+    "target": "score_risco",
+    "best_model": "XGBoost",
+    "models": {
+      "Ridge": {
+        "cv_r2_mean": 0.9655455139173601,
+        "cv_r2_std": 0.0030741650583233564,
+        "r2": 0.9721256130853781,
+        "rmse": 3.5104822743470687,
+        "mae": 2.77806647186116
+      },
+      "RandomForest": {
+        "cv_r2_mean": 0.9621944953699291,
+        "cv_r2_std": 0.004128543698848585,
+        "r2": 0.9710692940150616,
+        "rmse": 3.5763798416368817,
+        "mae": 2.7751416666666655
+      },
+      "GradientBoosting": {
+        "cv_r2_mean": 0.9751820287700992,
+        "cv_r2_std": 0.0014261339934498792,
+        "r2": 0.9798705614512783,
+        "rmse": 2.9831833971349857,
+        "mae": 2.31518499905523
+      },
+      "XGBoost": {
+        "cv_r2_mean": 0.9790367086227392,
+        "cv_r2_std": 0.0018223581354169203,
+        "r2": 0.985474816304123,
+        "rmse": 2.5341069453789267,
+        "mae": 1.9537862248420714
+      }
+    }
+  },
+  "dataset": {
+    "n_rows": 2000,
+    "n_features": 20,
+    "class_distribution": {
+      "Baixo Risco": 696,
+      "Médio Risco": 914,
+      "Alto Risco": 390
+    }
+  },
+  "random_state": 42,
+  "test_size": 0.2
+}

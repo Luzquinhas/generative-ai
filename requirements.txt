@@ -1,0 +1,13 @@
+# GAIE — Generative AI For Engineering
+# Dependências do projeto (testado em Python 3.11)
+
+pandas>=2.0
+numpy>=1.26
+scikit-learn>=1.4
+xgboost>=2.0
+shap>=0.44
+matplotlib>=3.7
+seaborn>=0.13
+plotly>=5.18
+streamlit>=1.30
+joblib>=1.3

@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Artefatos gerados pelo pipeline (reproduzíveis via `python run_pipeline.py`)
+# Mantidos fora do versionamento por serem regeneráveis; remova as linhas
+# abaixo caso queira versionar os artefatos para o deploy.
+models/*.joblib
+reports/figures/*.png
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/

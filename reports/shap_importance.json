@@ -1,0 +1,172 @@
+{
+  "classification": {
+    "model": "LogisticRegression",
+    "feature_importance": [
+      {
+        "feature": "distancia_centro_urbano_km",
+        "mean_abs_shap": 0.982895391744929
+      },
+      {
+        "feature": "isolamento_fornos",
+        "mean_abs_shap": 0.9177639452569042
+      },
+      {
+        "feature": "idh",
+        "mean_abs_shap": 0.9044338367799173
+      },
+      {
+        "feature": "pib_per_capita",
+        "mean_abs_shap": 0.8004479467199509
+      },
+      {
+        "feature": "taxa_informalidade",
+        "mean_abs_shap": 0.6938913913969326
+      },
+      {
+        "feature": "casos_oit_historicos",
+        "mean_abs_shap": 0.6920199087685427
+      },
+      {
+        "feature": "indice_pobreza",
+        "mean_abs_shap": 0.617459225079431
+      },
+      {
+        "feature": "vulnerabilidade_composta",
+        "mean_abs_shap": 0.6124757717702342
+      },
+      {
+        "feature": "cobertura_fiscalizacao",
+        "mean_abs_shap": 0.5970146187189097
+      },
+      {
+        "feature": "acesso_educacao",
+        "mean_abs_shap": 0.534692093303958
+      },
+      {
+        "feature": "fornos_detectados",
+        "mean_abs_shap": 0.4711727948153596
+      },
+      {
+        "feature": "deficit_fiscalizacao",
+        "mean_abs_shap": 0.3472841312864643
+      },
+      {
+        "feature": "uf",
+        "mean_abs_shap": 0.3288179133076737
+      },
+      {
+        "feature": "area_desmatada_km2",
+        "mean_abs_shap": 0.23873982243840358
+      },
+      {
+        "feature": "macrorregiao",
+        "mean_abs_shap": 0.21578340563336706
+      },
+      {
+        "feature": "pressao_carvao",
+        "mean_abs_shap": 0.15989874652957345
+      },
+      {
+        "feature": "log_populacao",
+        "mean_abs_shap": 0.1419588757525547
+      },
+      {
+        "feature": "densidade_populacional",
+        "mean_abs_shap": 0.08871351847712468
+      },
+      {
+        "feature": "populacao_total",
+        "mean_abs_shap": 0.053326916056163194
+      },
+      {
+        "feature": "fornos_por_1000hab",
+        "mean_abs_shap": 0.014401937258509134
+      }
+    ]
+  },
+  "regression": {
+    "model": "XGBoost",
+    "feature_importance": [
+      {
+        "feature": "vulnerabilidade_composta",
+        "mean_abs_shap": 5.617457389831543
+      },
+      {
+        "feature": "isolamento_fornos",
+        "mean_abs_shap": 4.830799102783203
+      },
+      {
+        "feature": "taxa_informalidade",
+        "mean_abs_shap": 2.085136651992798
+      },
+      {
+        "feature": "idh",
+        "mean_abs_shap": 2.070070505142212
+      },
+      {
+        "feature": "distancia_centro_urbano_km",
+        "mean_abs_shap": 1.773048758506775
+      },
+      {
+        "feature": "pib_per_capita",
+        "mean_abs_shap": 1.720382571220398
+      },
+      {
+        "feature": "casos_oit_historicos",
+        "mean_abs_shap": 1.5854120254516602
+      },
+      {
+        "feature": "cobertura_fiscalizacao",
+        "mean_abs_shap": 1.2653968334197998
+      },
+      {
+        "feature": "acesso_educacao",
+        "mean_abs_shap": 1.250974178314209
+      },
+      {
+        "feature": "area_desmatada_km2",
+        "mean_abs_shap": 1.1156612634658813
+      },
+      {
+        "feature": "deficit_fiscalizacao",
+        "mean_abs_shap": 0.9555445909500122
+      },
+      {
+        "feature": "indice_pobreza",
+        "mean_abs_shap": 0.760276198387146
+      },
+      {
+        "feature": "pressao_carvao",
+        "mean_abs_shap": 0.5216368436813354
+      },
+      {
+        "feature": "uf",
+        "mean_abs_shap": 0.35569455653603654
+      },
+      {
+        "feature": "fornos_por_1000hab",
+        "mean_abs_shap": 0.15724289417266846
+      },
+      {
+        "feature": "macrorregiao",
+        "mean_abs_shap": 0.13033782003913075
+      },
+      {
+        "feature": "fornos_detectados",
+        "mean_abs_shap": 0.09580037742853165
+      },
+      {
+        "feature": "densidade_populacional",
+        "mean_abs_shap": 0.09273841232061386
+      },
+      {
+        "feature": "populacao_total",
+        "mean_abs_shap": 0.056197334080934525
+      },
+      {
+        "feature": "log_populacao",
+        "mean_abs_shap": 0.013535023666918278
+      }
+    ]
+  }
+}
