@@ -10,6 +10,11 @@ Economia Espacial**. Demonstra, ponta a ponta, geração de dados, pré-processa
 engenharia de atributos, treino e comparação de modelos, validação, interpretabilidade
 com **SHAP** e **deploy** de uma aplicação web interativa em **Streamlit**.
 
+**Integrantes:** 
+- Lucas Rodrigues da Silva | RM: 98344
+- Juan Pinheiro de França  | RM: 552202 
+- Kaiky Alvaro de Miranda  | RM: 98118
+
 ---
 
 ## 1. Contexto do problema
