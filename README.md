@@ -222,8 +222,8 @@ pipeline antes.
 
 ## 8. A aplicação (Streamlit)
 
-🔗 **Aplicação em funcionamento:** _adicione aqui a URL pública após o deploy_
-(ver [DEPLOY](#9-deploy-opcional)).
+🔗 **Aplicação em funcionamento:** 
+(ver [DEPLOY](https://generative-ai-nemesis.streamlit.app/)).
 
 Cinco seções:
 

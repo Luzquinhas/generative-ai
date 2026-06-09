@@ -47,7 +47,6 @@ from src import config, preprocessing  # noqa: E402
 # ---------------------------------------------------------------------------
 st.set_page_config(
     page_title="GAIE — Risco de Trabalho Forçado",
-    page_icon="🛰️",
     layout="wide",
 )
 
@@ -106,7 +105,7 @@ def _hex_para_rgba(hex_cor: str, alpha: float = 0.2) -> str:
 # ===========================================================================
 def render_cabecalho() -> None:
     """Renderiza o título e o subtítulo explicativo do app."""
-    st.title("🛰️ GAIE — Risco de Trabalho Forçado")
+    st.title("GAIE — Risco de Trabalho Forçado")
     st.markdown(
         "**Generative AI For Engineering** · Estima a **probabilidade/risco de "
         "trabalho forçado** por região, cruzando a **detecção de fornos "
@@ -121,7 +120,7 @@ def render_cabecalho() -> None:
 # ===========================================================================
 def render_mapa(df: pd.DataFrame) -> None:
     """Mapa interativo das regiões com filtros e métricas-resumo."""
-    st.header("🗺️ Mapa de Risco")
+    st.header("Mapa de Risco")
 
     # ----------------------------- Filtros --------------------------------
     with st.expander("Filtros", expanded=True):
@@ -244,7 +243,7 @@ def render_mapa(df: pd.DataFrame) -> None:
 
     csv = tabela.to_csv(index=False).encode("utf-8")
     st.download_button(
-        "⬇️ Baixar CSV filtrado",
+        "Baixar CSV filtrado",
         data=csv,
         file_name="gaie_regioes_filtradas.csv",
         mime="text/csv",
@@ -278,7 +277,7 @@ def render_simulador(
     shap_data: dict | None,
 ) -> None:
     """Simulador interativo: entra atributos de uma região e prevê o risco."""
-    st.header("🎯 Simulador de Risco")
+    st.header("Simulador de Risco")
 
     if bundle_clf is None and bundle_reg is None:
         st.warning(_MSG_SEM_MODELOS)
@@ -488,7 +487,7 @@ def _estilo_destaque(df_tab: pd.DataFrame, best: str | None):
 
 def render_comparacao(metrics: dict | None) -> None:
     """Tabelas e figuras de comparação dos modelos (clf e reg)."""
-    st.header("📊 Comparação de Modelos")
+    st.header("Comparação de Modelos")
 
     if metrics is None:
         st.warning(_MSG_SEM_MODELOS)
@@ -595,7 +594,7 @@ def _grafico_shap(importancias: list[dict], titulo: str) -> None:
 
 def render_interpretabilidade(shap_data: dict | None) -> None:
     """Importância de atributos via SHAP (classificação e regressão)."""
-    st.header("🧠 Interpretabilidade (SHAP)")
+    st.header("Interpretabilidade (SHAP)")
 
     if shap_data is None:
         st.warning(_MSG_SEM_MODELOS)
@@ -661,7 +660,7 @@ def render_interpretabilidade(shap_data: dict | None) -> None:
 # ===========================================================================
 def render_sobre(df: pd.DataFrame | None) -> None:
     """Contexto do problema, dataset e metodologia."""
-    st.header("ℹ️ Sobre o projeto")
+    st.header("Sobre o projeto")
 
     st.markdown(
         """
@@ -705,7 +704,7 @@ três variáveis-alvo:
         c3.metric("UFs", f"{df['uf'].nunique()}")
 
     st.warning(
-        "⚠️ **Aviso:** os dados utilizados são **SINTÉTICOS**, gerados "
+        "**Aviso:** os dados utilizados são **SINTÉTICOS**, gerados "
         "programaticamente para fins **acadêmicos**. Não representam pessoas, "
         "municípios ou ocorrências reais."
     )
@@ -729,11 +728,11 @@ def main() -> None:
     secao = st.sidebar.radio(
         "Seção",
         options=[
-            "🗺️ Mapa de Risco",
-            "🎯 Simulador de Risco",
-            "📊 Comparação de Modelos",
-            "🧠 Interpretabilidade (SHAP)",
-            "ℹ️ Sobre",
+            "Mapa de Risco",
+            "Simulador de Risco",
+            "Comparação de Modelos",
+            "Interpretabilidade (SHAP)",
+            "Sobre",
         ],
         label_visibility="collapsed",
     )
@@ -741,14 +740,14 @@ def main() -> None:
     # Status dos artefatos na barra lateral.
     st.sidebar.divider()
     st.sidebar.caption("Status dos artefatos")
-    st.sidebar.write("Dataset:", "✅" if df is not None else "❌")
-    st.sidebar.write("Modelo classificação:", "✅" if bundle_clf else "❌")
-    st.sidebar.write("Modelo regressão:", "✅" if bundle_reg else "❌")
-    st.sidebar.write("Métricas:", "✅" if metrics else "❌")
-    st.sidebar.write("SHAP:", "✅" if shap_data else "❌")
+    st.sidebar.write("Dataset:", "OK" if df is not None else "ausente")
+    st.sidebar.write("Modelo classificação:", "OK" if bundle_clf else "ausente")
+    st.sidebar.write("Modelo regressão:", "OK" if bundle_reg else "ausente")
+    st.sidebar.write("Métricas:", "OK" if metrics else "ausente")
+    st.sidebar.write("SHAP:", "OK" if shap_data else "ausente")
 
     # O dataset é o mínimo necessário para a maioria das seções.
-    if df is None and secao in {"🗺️ Mapa de Risco", "🎯 Simulador de Risco"}:
+    if df is None and secao in {"Mapa de Risco", "Simulador de Risco"}:
         st.error(
             "Dataset não encontrado. Rode: `python run_pipeline.py` "
             "(ou gere os dados com `python -m src.data_generation`)."
@@ -756,13 +755,13 @@ def main() -> None:
         return
 
     # Roteamento.
-    if secao == "🗺️ Mapa de Risco":
+    if secao == "Mapa de Risco":
         render_mapa(df)
-    elif secao == "🎯 Simulador de Risco":
+    elif secao == "Simulador de Risco":
         render_simulador(df, bundle_clf, bundle_reg, shap_data)
-    elif secao == "📊 Comparação de Modelos":
+    elif secao == "Comparação de Modelos":
         render_comparacao(metrics)
-    elif secao == "🧠 Interpretabilidade (SHAP)":
+    elif secao == "Interpretabilidade (SHAP)":
         render_interpretabilidade(shap_data)
     else:
         render_sobre(df)
